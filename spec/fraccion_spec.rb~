@@ -1,4 +1,4 @@
-require "../lib/fraccion.rb"
+require "fraccion.rb"
 
 describe Fraccion do
 	before :each do	
@@ -163,7 +163,7 @@ describe Fraccion do
 #Modificacion
 	describe "#Funciones conjuntas" do
 		it "Usamos una funcion" do
-			if ((@p1 % @p2) == 0)
+			if ((@p1 % @p3) == 0)
 				(((@p1.opuesto)*@p3).abs).to_s.should eq("1/4")
 			else
 				0.should eq(0)

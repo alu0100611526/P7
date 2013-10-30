@@ -1,10 +1,11 @@
 
 #require "./gcd.rb"
 #Programa que trabaja con fracciones
-#Adriana Rolo Inchausti, Luis Antonio Orta Mendes 
+#Adriana Rolo Inchausti, Luis Antonio Orta Mendez
 
 class Fraccion
 attr_reader :denominador, :numerador
+include Comparable
 
 	def initialize(num, denomin)
 		#atributo
@@ -119,6 +120,9 @@ attr_reader :denominador, :numerador
 		temp = Fraccion.new(nume/mcd, deno/mcd)
 	end
 
+
+
+
 #Sobrecarga del operador de multiplicación, recibe como parametros dos francciones y devuelve una fraccion con el resultado de la multiplicación
 	def * (other) 
 		nume = @numerador * other.numerador
@@ -146,6 +150,15 @@ attr_reader :denominador, :numerador
 	end
 
 
+
+#Operador de comparacion (Modulo comparable)
+	def <=> (other)
+		return nil unless other.instance_of?Fraccion
+		(@numerador/@denominador)<=>(other.numerador/other.denominador)
+	end
+
+
+=begin
 #Sobrecarga de operadores de comparación devuelve true en caso de que sea cierto y falso en caso contrario 
 #Mayor que 
 	def > (otro)
@@ -184,8 +197,8 @@ attr_reader :denominador, :numerador
 		end
 		
 	end
-	
-end
+=end	
+end 
 
 
 

@@ -17,3 +17,4 @@ desc "Run tests with format: html"
 task :thtml do
   sh "cd spec \n rspec fraccion_spec.rb --format html"
 end
+
